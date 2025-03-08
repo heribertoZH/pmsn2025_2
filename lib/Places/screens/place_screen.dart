@@ -9,6 +9,7 @@ class PlaceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
           Padding(
@@ -165,7 +166,7 @@ class PlaceScreen extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(15),
         ),
-        child: FloatingActionButton(
+        child: FloatingActionButton(   
           backgroundColor: Colors.black,
           onPressed: () {},
           child: Row(

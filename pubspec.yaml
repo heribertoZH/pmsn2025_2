@@ -41,6 +41,11 @@ dependencies:
   path_provider: ^2.1.5
   carousel_slider: ^5.0.0
   flutter_svg: ^2.0.17
+  intl: ^0.20.2
+  image_picker: ^1.1.2
+  shared_preferences: ^2.5.2
+  art_sweetalert: ^0.0.5
+  email_validator: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +91,22 @@ flutter:
     - family: Swar
       fonts:
         - asset: fonts/StarJedi-DGRW.ttf
+    - family: Lobster
+      fonts:
+        - asset: fonts/Lobster.ttf
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto.ttf
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat.ttf
+    - family: Inter
+      fonts:
+        - asset: fonts/Inter.otf
+    - family: Poppins
+      fonts:
+        - asset: fonts/Poppins.otf
+      
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

@@ -121,9 +121,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   "View all",
                   textAlign: TextAlign.end,
                   style: TextStyle(
+                    color: Colors.grey[500],
+                    
                     fontSize: 16,
                     fontFamily: "Roboto",
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
