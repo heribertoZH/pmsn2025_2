@@ -21,11 +21,11 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _loadSettings() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  setState(() {
-    _actSesion = prefs.getBool('actSesion') ?? false;
-  });
-}
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _actSesion = prefs.getBool('actSesion') ?? false;
+    });
+  }
 
   bool isValidating = false;
 
@@ -41,11 +41,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (_emailController.text == savedEmail &&
         _passwordController.text == savedPassword) {
+      setState(() {
+        _errorMessage = "";
+      });
       Navigator.pushNamedAndRemoveUntil(
           context, "/dash", (Route route) => false);
     } else {
       setState(() {
-        _errorMessage = "Email o contraseña incorrectos";
+        _errorMessage = "Credenciales incorrectas";
       });
     }
   }
@@ -128,10 +131,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         _buildTextField(
                           controller: _emailController,
-                          label: "Usuario",
+                          label: "Email",
                           icon: Icons.person,
                           validator: (value) =>
-                              value!.isEmpty ? "Ingrese su usuario" : null,
+                              value!.isEmpty ? "Ingrese su email" : null,
                         ),
                         SizedBox(height: 10),
                         _buildTextField(
@@ -152,7 +155,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               _actSesion = value;
                             });
                             await _updateSettingActSesion(value);
-                            print(_actSesion);
                           },
                         ),
                         SizedBox(height: 20),
@@ -180,8 +182,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         // Botón de registro
                         GestureDetector(
-                          onTap: () =>
-                              Navigator.pushNamed(context, "/register"),
+                          onTap: () {
+                            setState(() {
+                              _errorMessage = "";
+                            });
+                            Navigator.pushNamed(context, "/register");
+                          },
                           child: Text(
                             "¿No tienes cuenta? Regístrate",
                             style: TextStyle(

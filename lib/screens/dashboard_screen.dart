@@ -98,9 +98,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     : AssetImage("assets/defaultAvatar.png") as ImageProvider,
               ),
               accountName: Text(
+                //"Heriberto Zuñiga Hernandez"
                 _name!,
               ),
               accountEmail: Text(
+                //"heriberto3211@gmail.com"
                 _email!,
               ),
             ),
